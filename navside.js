@@ -109,12 +109,4 @@ NavItem.forEach((items, index) => {
     }
   });
 });
-// 圖片縮放大小
-window.addEventListener("resize", () => {
-  if(window.innerWidth<=720){
-    carImg.style.
-    powerImg
-    chargeImg
-    storeImg
-  }
-})
+
