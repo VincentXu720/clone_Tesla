@@ -1,3 +1,4 @@
+import { backdrop } from "./share.js";
 // MenuBtn
 const MenuBtn = document.querySelector("#menuBtn");
 const aside = document.querySelector(".aside");
@@ -28,7 +29,7 @@ function openMenu() {
 }
 // aside Container(original)
 function originContent() {
-  asideContainer = document.querySelector(".aside-container");
+  const asideContainer = document.querySelector(".aside-container");
   asideContainer.innerHTML = `
     <ol>
       <li class="aside-list">
@@ -152,9 +153,9 @@ function processContent() {
           }
           // 創造內容
           asideContainer.innerHTML = `
-            <section class="m-produce">
-              <div class="m-produceImg carImg">
-                  <div class="produce-container">
+            <section class="m-product">
+              <div class="m-productImg carImg">
+                  <div class="product-container">
                       <img class="M-car" src="assets/Model-S-nav.avif">
                       <h3>Model S</h3>
                       <span>
@@ -162,7 +163,7 @@ function processContent() {
                           <a href="">訂購</a>
                       </span>
                   </div>
-                  <div class="produce-container">
+                  <div class="product-container">
                       <img class="M-car" src="assets/Model-3-nav.avif">
                       <h3>Model 3</h3>
                       <span>
@@ -170,7 +171,7 @@ function processContent() {
                           <a href="">訂購</a>
                       </span>
                   </div>
-                  <div class="produce-container">
+                  <div class="product-container">
                       <img class="M-car" src="assets/Model-X-nav.avif">
                       <h3>Model X</h3>
                       <span>
@@ -178,7 +179,7 @@ function processContent() {
                           <a href="">訂購</a>
                       </span>
                   </div>
-                  <div class="produce-container">
+                  <div class="product-container">
                       <img class="M-car" src="assets/Model-Y-nav.avif">
                       <h3>Model Y</h3>
                       <span>
@@ -186,7 +187,7 @@ function processContent() {
                           <a href="">訂購</a>
                       </span>
                   </div>
-                  <div class="produce-container">
+                  <div class="product-container">
                       <img class="M-car" src="assets/Vehicles-Cybertruck.avif">
                       <h3>Cybertruck</h3>
                       <span>
@@ -195,7 +196,7 @@ function processContent() {
                       </span>
                   </div>
               </div>
-              <div class="produce-Menu">
+              <div class="product-Menu">
                   <ol>
                       <li><a href="">現貨車</a></li>
                       <li><a href="">認證中古車</a></li>
@@ -242,16 +243,16 @@ function processContent() {
           }
           // Change Content
           asideContainer.innerHTML = `
-            <section class="m-produce">
-              <div class="m-produceImg power">
-                  <div class="produce-container">
+            <section class="m-product">
+              <div class="m-productImg power">
+                  <div class="product-container">
                       <img class="M-power" src="assets/Powerwall-Global.avif">
                       <h3>Powerwall</h3>
                       <span>
                           <a href="">了解更多</a>
                       </span>
                   </div>
-                  <div class="produce-container">
+                  <div class="product-container">
                       <img class="M-power" src="assets/Energy-Megapack.avif">
                       <h3>Megapack</h3>
                       <span>
@@ -259,7 +260,7 @@ function processContent() {
                       </span>
                   </div>
               </div>
-              <div class="produce-Menu">
+              <div class="product-Menu">
                   <ol>
                       <li><a href="">公共設施</a></li>
                       <li><a href="">商業用途</a></li>
@@ -301,16 +302,16 @@ function processContent() {
           }
           // Change Content
           asideContainer.innerHTML = `
-            <section class="m-produce">
-              <div class="m-produceImg charge">
-                  <div class="produce-container">
+            <section class="m-product">
+              <div class="m-productImg charge">
+                  <div class="product-container">
                       <img class="M-power" src="assets/Charging-Global.avif">
                       <h3>充電</h3>
                       <span>
                           <a href="">了解更多</a>
                       </span>
                   </div>
-                  <div class="produce-container">
+                  <div class="product-container">
                       <img class="M-power" src="assets/Home-Charging-Global.avif">
                       <h3>家用充電</h3>
                       <span>
@@ -318,7 +319,7 @@ function processContent() {
                           <a href="">線上商店</a>
                       </span>
                   </div>
-                  <div class="produce-container">
+                  <div class="product-container">
                       <img class="M-power" src="assets/Supercharging-APAC.avif">
                       <h3>超級充電</h3>
                       <span>
@@ -327,7 +328,7 @@ function processContent() {
                       </span>
                   </div>
               </div>
-              <div class="produce-Menu">
+              <div class="product-Menu">
                   <ol>
                       <li><a href="">旅程規劃程式</a></li>
                       <li><a href="">超級充電站票選</a></li>

@@ -1,16 +1,16 @@
+import { header,backdrop} from "./share.js";
 const NavItem = document.querySelectorAll(".nav-item");
 const header_panel = document.querySelector(".header-panel");
 const header_panel_content = document.querySelectorAll(".header-panel-content");
-const backdrop = document.querySelector(".backdrop");
-const header = document.querySelector("header");
-// const produceContent = document.querySelector('.produce-content')
-const produceLink = document.querySelectorAll('.produce-Links')
-// produce Image
+
+// const productContent = document.querySelector('.product-content')
+const productLink = document.querySelectorAll('.product-Links')
+// product Image
 const carImg = document.querySelectorAll(".car");
 const powerImg = document.querySelectorAll(".power");
 const chargeImg = document.querySelectorAll(".charge");
 const storeImg = document.querySelectorAll(".store-item");
-const arrowBtn = document.querySelector(".left-arrow");
+
 
 NavItem.forEach((items, index) => {
   const getpanel = window.getComputedStyle(header_panel_content[index]);
@@ -21,7 +21,7 @@ NavItem.forEach((items, index) => {
     content.style.top = '-' + '410px';
     content.style.opacity = 0;
   });
-  
+  header.style.opacity=1;
   items.addEventListener("mouseover", () => {
     header_panel_content.forEach((content) => {
       content.classList.remove("active");
@@ -44,17 +44,17 @@ NavItem.forEach((items, index) => {
     let time = 0.5;
     switch (index) {
       case 0:
-        produceLink[index].classList.add("active")
+        productLink[index].classList.add("active")
         carTransition(time);
         console.log("car");
         break;
       case 1:
-        produceLink[index].classList.add("active")
+        productLink[index].classList.add("active")
         powerTransition(time);
         console.log("power");
         break;
       case 2:
-        produceLink[index].classList.add("active")
+        productLink[index].classList.add("active")
         chargeTransition(time);
         console.log("charge");
         break;
@@ -68,6 +68,7 @@ NavItem.forEach((items, index) => {
     carImg.forEach((image) => {
       image.classList.add("active");
       image.style.transition = 1 + "s";
+      image.style.transform = "translateY(5px)";
       image.style.transitionDelay = time + "s";
       time += 0.5;
       image.style.opacity = 1;
@@ -77,6 +78,7 @@ NavItem.forEach((items, index) => {
     powerImg.forEach((image) => {
       image.classList.add("active");
       image.style.transition = 1 + "s";
+      image.style.transform = "translateY(5px)";
       image.style.transitionDelay = time + "s";
       time += 0.5;
       image.style.opacity = 1;
@@ -86,6 +88,7 @@ NavItem.forEach((items, index) => {
     chargeImg.forEach((image) => {
       image.classList.add("active");
       image.style.transition = 1 + "s";
+      image.style.transform = "translateY(5px)";
       image.style.transitionDelay = time + "s";
       time += 0.5;
       image.style.opacity = 1;
@@ -95,6 +98,7 @@ NavItem.forEach((items, index) => {
     storeImg.forEach((image) => {
       image.classList.add("active");
       image.style.transition = 1 + "s";
+      image.style.transform = "translateY(5px)";
       image.style.transitionDelay = time + "s";
       time += 0.5;
       image.style.opacity = 1;
