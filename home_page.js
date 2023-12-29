@@ -1,4 +1,3 @@
-import { header } from "./share.js";
 // home page
 const imageTitle = document.querySelectorAll(".home_image_Title");
 const imagesubtitle = document.querySelectorAll(".subtitle");
@@ -7,7 +6,7 @@ const more = document.querySelectorAll(".more");
 const reserve = document.querySelectorAll(".reserve");
 const singlebutton = document.querySelectorAll(".singleButton");
 const ButtonBox = document.querySelectorAll(".buttonBox");
-const section = document.querySelectorAll('.home-content');
+const section = document.querySelectorAll(".home-content");
 if (window.innerWidth <= 699) {
   imageTitle.forEach((imgTitle) => {
     imgTitle.style.opacity = 1;
@@ -80,65 +79,46 @@ if (window.innerWidth <= 699) {
   });
 }
 
-let curPage = 0;
-const totalSection = section.length-1;
-let scrolling = false;
-window.addEventListener('wheel',(e)=>{
-  scrolling = true;
-  if(scrolling === true){
-    console.log('yes')
-    if(e.deltaY>0){
-      ScrollDownMove()
-    }else{
-      ScrollUpMove()
+let Width = window.innerWidth;
+if (Width <= 768) {
+  let curPage = 0;
+  const totalSection = section.length - 1;
+  let scrolling = false;
+  window.addEventListener("wheel", (e) => {
+    scrolling = true;
+    if (scrolling === true) {
+      if (e.deltaY > 0) {
+        ScrollDownMove();
+      } else {
+        ScrollUpMove();
+      }
+    }
+    setTimeout(() => {
+      scrolling = false;
+    }, 1000);
+  });
+  function ScrollUpMove() {
+    if (curPage > 0) {
+      curPage--;
+      up(curPage);
     }
   }
-  setTimeout(()=>{
-    console.log('false');
-    scrolling = false;
-  },1000)
-})
-function ScrollUpMove(){
-  if(curPage>0){
-    console.log('減')
-    curPage--;
-    up(curPage);
+  function ScrollDownMove() {
+    if (curPage < totalSection) {
+      curPage++;
+      down(curPage);
+    }
+  }
+  function up(curPage) {
+    window.scrollTo({
+      top: section[curPage].offsetTop,
+      behavior: "smooth",
+    });
+  }
+  function down(curPage) {
+    window.scrollTo({
+      top: section[curPage].offsetTop,
+      behavior: "smooth",
+    });
   }
 }
-function ScrollDownMove(){
-  if(curPage<totalSection){
-    console.log('加')
-    curPage++;
-    down(curPage);
-  }
-}
-function up(curPage){
-  window.scrollTo({
-    top:section[curPage].offsetTop,
-    behavior:'smooth'
-  });
-}
-function down(curPage){
-  window.scrollTo({
-    top:section[curPage].offsetTop,
-    behavior:'smooth'
-  });
-}
-section.forEach((sect)=>{
-  console.log(sect.offsetTop)
-})
-
-// 判定值(使用者是否滑動)
-// 當前值(判定使用者往上或往下滑動)
-// if(判!=0){
-//  if(當前值>判定值){
-//       往上
-//  }else{
-//       往下
-//       移動到內容offsetTop
-//       for(i=0;i<home_content.length;i++){
-//           home_content[i].offsetTop
-//       }
-
-//  }
-// }

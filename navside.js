@@ -1,10 +1,9 @@
-import { header,backdrop} from "./share.js";
+import { header,backdrop,body} from "./share.js";
 const NavItem = document.querySelectorAll(".nav-item");
 const header_panel = document.querySelector(".header-panel");
 const header_panel_content = document.querySelectorAll(".header-panel-content");
+const productLink = document.querySelectorAll('.product-Links');
 
-// const productContent = document.querySelector('.product-content')
-const productLink = document.querySelectorAll('.product-Links')
 // product Image
 const carImg = document.querySelectorAll(".car");
 const powerImg = document.querySelectorAll(".power");
@@ -22,25 +21,31 @@ NavItem.forEach((items, index) => {
     content.style.opacity = 0;
   });
   header.style.opacity=1;
-  items.addEventListener("mouseover", () => {
+  items.addEventListener("mouseover", (e) => {
+
     header_panel_content.forEach((content) => {
+      content.addEventListener('wheel',(e)=>{ // 防止事件冒泡
+        e.stopPropagation();
+      })
       content.classList.remove("active");
     });
+    body.style.overflow = 'hidden';
+
     header_panel.classList.add("active");
     header_panel_content[index].classList.add("active"); // 索檢使用者移到的目標內容
     backdrop.classList.add("active");
     //  panel height
     const ContentHeight = header_panel_content[index].offsetHeight;
     header_panel.style.height = ContentHeight + panelMargin + 10 + "px";
-    
-    console.log(header_panel.offsetHeight);
 
     backdrop.addEventListener("mouseover", () => {
       header_panel.style.height='0px'
       header_panel.classList.remove("active");
       header_panel_content[index].classList.remove("active");
       backdrop.classList.remove("active");
+      body.style.overflow="scroll";
     });
+
     let time = 0.5;
     switch (index) {
       case 0:
@@ -104,11 +109,14 @@ NavItem.forEach((items, index) => {
       image.style.opacity = 1;
     });
   }
+
   window.addEventListener("resize", () => {
     if (window.innerWidth <= 1200) {
       header_panel_content.forEach((content) => {
         content.classList.remove("active");
         backdrop.classList.remove("active");
+        header_panel.style.height="0px";
+        body.style.overflow="scroll";
       });
     }
   });

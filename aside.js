@@ -1,14 +1,15 @@
-import { backdrop } from "./share.js";
+import { backdrop, body } from "./share.js";
 // MenuBtn
 const MenuBtn = document.querySelector("#menuBtn");
 const aside = document.querySelector(".aside");
-const menupanel = document.querySelector(".menu-panel");
 const closeBtn = document.querySelector(".close");
 
-// Moblie
-const itemList = document.querySelectorAll(".aside-list");
-
 MenuBtn.addEventListener("click", () => {
+  aside.addEventListener('wheel',(e)=>{
+    body.style.overflow='hidden';
+    e.stopPropagation();
+  })
+  
   openMenu();
 });
 closeBtn.addEventListener("click", () => {
@@ -94,9 +95,6 @@ function originContent() {
                   account_circle
               </span>
               <h1>帳戶</h1>
-              <span class="material-symbols-outlined arrow">
-                  arrow_forward_ios
-              </span>
           </a>
       </li>
   </ol>
@@ -802,60 +800,12 @@ function Europe(AreaName,countryname) {
   }
 }
 
-function clicktarget(){
-
-}
-// function MiddelEast(countryname, mark, AreaName){
-//   const title = document.querySelector(".title");
-//   const back = document.querySelector(".left-arrow");
-//   const asideContainer = document.querySelector(".aside-container");
-//   title.innerHTML = `${countryname.textContent}`;
-//   back.innerHTML = `
-//     <span class="material-symbols-outlined">
-//       chevron_left
-//     </span>
-//   `;
-//   console.log(mark)
-//   console.log('yes')
-//   switch(mark){
-//     case 0:
-//       asideContainer.innerHTML = `
-//         <ol class="multiLan">
-//           <a><li>英語</li></a>
-//           <a><li>阿拉伯語</li></a>
-//         </ol>
-//       `;
-//     case 1:
-//       asideContainer.innerHTML = `
-//         <ol class="multiLan">
-//           <a><li>英語</li></a>
-//           <a><li>阿拉伯語</li></a>
-//         </ol>
-//       `;
-//   }
-//   if (back) {
-//     back.addEventListener("click", () => {
-//       Country(mark,AreaName);
-//     });
-//   }
-// }
-
-// moblie
 window.addEventListener("resize", () => {
   if (window.innerWidth <= 1200) {
-    // 導覽列會消失變成aside的導覽列
-    // 改變header內容物(網頁上NAV改只有選單button)
-    // 改變dialog內容物
-    // dialog => header(aside的header)、導覽列
-    // dialog => dialog.innerHTML = ''
-    //           dialog.innerHTML = `<div class> <div class>`
+    
   } else {
-    // 改變header內容物
-    // 改變dialog內容物
-    // dialog => 導覽列
-    // dialog => dialog.innerHTML = ''
-    //           dialog.innerHTML = `<div class>`
+    
   }
 });
 
-// 國家隔開做
+
