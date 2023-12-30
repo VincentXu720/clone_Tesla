@@ -80,12 +80,13 @@ if (window.innerWidth <= 699) {
 }
 
 let Width = window.innerWidth;
-if (Width <= 768) {
+if (Width <= 600) {
   let curPage = 0;
   const totalSection = section.length - 1;
   let scrolling = false;
   window.addEventListener("wheel", (e) => {
     scrolling = true;
+    console.log('yes')
     if (scrolling === true) {
       if (e.deltaY > 0) {
         ScrollDownMove();
@@ -95,7 +96,7 @@ if (Width <= 768) {
     }
     setTimeout(() => {
       scrolling = false;
-    }, 1000);
+    }, 100);
   });
   function ScrollUpMove() {
     if (curPage > 0) {
@@ -122,3 +123,15 @@ if (Width <= 768) {
     });
   }
 }
+window.addEventListener('resize',()=>{
+  customer.forEach((c) => {
+    c.style.opacity = 1;
+    c.style.transitionDelay = 0 + "s";
+    c.style.transform = "translateX(0px)";
+  });
+  more.forEach((m) => {
+    m.style.opacity = 1;
+    m.style.transitionDelay = 0 + "s";
+    m.style.transform = "translateX(0px)";
+  });
+})
