@@ -8,20 +8,22 @@
   /* 防止跑版 */
   box-sizing: border-box;
 }
+html,
 body{
-  margin: 0 !important;
-  padding:0 !important;
-  border:none !important;
-  background-color: black;
+  margin: 0;
+  padding:0;
+  border:none;
+  background-color: transparent;
+  overflow:hidden;
 }
 body::-webkit-scrollbar{
-  width:10px;
+  width:3px;
 }
 body::-webkit-scrollbar-thumb{
-  background-color:rgb(172, 171, 171);
+  background-color:transparent;
 }
 body::-webkit-scrollbar-track{
-  background-color:rgb(235, 232, 232);
+  background-color:transparent;
 }
 
 
@@ -29,8 +31,6 @@ body::-webkit-scrollbar-track{
 header {
   display: grid;
   grid-template-columns: auto 1fr auto;
-  /* padding:5px 20px; */
-  /* margin:10px 0 0 10px; */
   z-index: 100;
   top: 0;
   width: 100%;
@@ -820,7 +820,7 @@ aside.active {
   display:flex;
   flex-direction:column;
   text-align: center;
-  height:565px;
+  height:80%;
 }
 .Text h1{
   font-family:var(--font-fmaily);
@@ -853,6 +853,8 @@ aside.active {
   font-size:12px;
   justify-content: center;
   padding-right:15px;
+  opacity:0;
+  transition:transform .3s ease-in,opacity .3s ease-in;
 }
 .Text .buttonContainer{
   display:grid;
@@ -888,12 +890,6 @@ aside.active {
 .buttonContainer .more:hover{
   background-color:rgb(196, 192, 192);
   color:rgba(17, 19, 23, 0.8);;
-}
-.reserve{
-  opacity:0;
-  margin-top:20px;
-  height:40px;
-  transition:transform .3s ease-in,opacity .3s ease-in;
 }
 .reserve a{
   height:15px;
@@ -977,8 +973,9 @@ aside.active {
   grid-row:1;
   display:flex;
   width:100%;
-  height:590px;
+  height:100%;
   justify-content: center;
+  padding-top:55px;
 }
 .TextContent{
   text-align: center;
@@ -1010,12 +1007,12 @@ aside.active {
   background-color:rgb(103, 97, 97);
 }
 .TextBox{
-  padding-top:95px;
+  padding-top:105px;
   position:absolute;
   z-index:3;
   display:flex;
   width:100%;
-  height:590px;
+  height:100%;
   justify-content: center;
 }
 
@@ -1063,7 +1060,6 @@ aside.active {
 }
 
 .home-AccessoriesImg{
-  grid-row:1;
   width:100%;
   height:100%;
   position:relative
@@ -1095,7 +1091,7 @@ aside.active {
 .AccessoriesContent{
   position:absolute;
   width:100%;
-  height:700px;
+  height:100%;
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -1109,7 +1105,7 @@ aside.active {
 .Button_and_Footer{
   display:flex;
   width:100%;
-  height:550px;
+  height:95%;
   flex-direction:column;
   align-items: center;
   justify-content: flex-end;
@@ -1167,7 +1163,7 @@ aside.active {
 /* RWD */
 
 /* 平板 */
-@media (max-width:992px){
+@media screen and (max-width:992px){
   .desktop{
     display:none;
   }
@@ -1175,10 +1171,14 @@ aside.active {
     display:block;
   }
   .home-content{
-    height:675px;
+    height:100vh;
   }
   .TextBox{
-    padding-top:110px;
+    height:100%;
+    padding-top:140px;
+  }
+  .TextBox .Text{
+    height:80%;
   }
   .videoContent{
     height:675px;
@@ -1197,7 +1197,10 @@ aside.active {
   }
   .AccessoriesContent{
     padding-top:71px;
-    height:675px;
+    height:100%;
+  }
+  .Button_and_Footer {
+    height:95%;
   }
   /* aside car */
   .carImg .product-container{
@@ -1244,12 +1247,11 @@ aside.active {
   }
 }
 /* 手機 */
-@media (max-width:650px){
+@media screen and (max-width:650px){
   .home-content{
-    height:700px;
+    height:100vh;
   }
   .TextBox{
-
     height:100%;
   }
   .TextBox .Text{
@@ -1259,7 +1261,7 @@ aside.active {
     flex-direction:column;
   }
   .Text .buttonContainer{
-    height:80%;
+    height:75%;
   }
   .buttonContainer .customer{
     width:100%;
@@ -1277,12 +1279,15 @@ aside.active {
     margin-top:10px;
   }
   .videoContent{
-    height:700px;
+    max-height:100%;
   }
   .videoBox .TextBox{
     margin:0;
     padding-top:95px;
     height:650px;
+  }
+  .video {
+    height:100vh;
   }
   .TextContent{
     height:100%;
@@ -1293,19 +1298,25 @@ aside.active {
   .Tesla_Product .home_image_Title{
     font-size:32px;
   }
+  .Tesla_Product .TextBox{
+    height:100%;
+    padding-top:70px;
+  }
+  .Tesla_Product .Text{
+    height:90%;
+  }
   .moreProduct{
     height:80%;
   }
   .AccessoriesContent{
-    height:700px;
+    height:100%;
     padding-top:50px;
   }
   .Button_and_Footer{
-    height:95%;
+    height:93%;
   }
   .footer-nav{
-    background-color:transparent;
-    height:40px;
+    height:55px;
     padding-bottom:15px;
   }
   .footer-item a{
@@ -1324,18 +1335,18 @@ aside.active {
     padding-left:54px;
   }
 }
-@media (max-width:512px){
+@media screen and (max-width:512px){
   .home-content{
-    height:680px;
+    height:100vh;
   }
   .TextBox{
     padding-top:75px;
   }
   .videoContent{
-    height:680px
+    height:671px;
   }
   .Text .buttonContainer{
-    height:90%;
+    height:80%;
   }
   .Tesla_Product .TextBox{
     padding-top:60px;
@@ -1353,9 +1364,6 @@ aside.active {
     height:92%;
   }
   /* aside */
-  .home-carImg img{
-    object-fit:cover;
-  }
   .carImg{
     padding-left:0;
   }
@@ -1386,7 +1394,57 @@ aside.active {
     align-items:center;
   }
 }
-@media (max-width:430px){
+@media screen and (max-width:480px){
+  .home-content{
+    height:100vh;
+  }
+  .TextBox{
+    height:100%;
+    padding-top:110px;
+  }
+  .TextBox .Text{
+    height:100%;
+  }
+  .Text .buttonContainer{
+    height:70%;
+  }
+  .Text .reserve{
+    margin-top:0px;
+  }
+  .videoContent{
+    height:100%;
+  }
+  .video{
+    height:100vh;
+  }
+  .videoBox .TextBox{
+    height:100%;
+  }
+  .TextContent{
+    height:90%;
+  }
+  .Tesla_Product .TextBox {
+    height:100%;
+    padding-top:95px;
+  }
+
+  .moreProduct{
+    height:60%;
+  }
+  .AccessoriesContent{
+    height:100%;
+    padding-top:95px;
+  }
+  .home-powerImg img{
+    display:block;
+  }
+  .Button_and_Footer{
+    height:100%;
+  }
+  .footer-nav{
+    background-color: transparent;
+  }
+  /* aside */
   .carImg{
     grid-template-rows: repeat(5,1fr);
     grid-template-columns: 0;

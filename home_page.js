@@ -1,3 +1,4 @@
+import {body} from "./share.js";
 // home page
 const imageTitle = document.querySelectorAll(".home_image_Title");
 const imagesubtitle = document.querySelectorAll(".subtitle");
@@ -86,7 +87,7 @@ if (Width <= 600) {
   let scrolling = false;
   window.addEventListener("wheel", (e) => {
     scrolling = true;
-    console.log('yes')
+    body.style.overflow='scroll';
     if (scrolling === true) {
       if (e.deltaY > 0) {
         ScrollDownMove();
@@ -117,6 +118,8 @@ if (Width <= 600) {
     });
   }
   function down(curPage) {
+    console.log(curPage)
+    console.log(section[curPage].offsetTop)
     window.scrollTo({
       top: section[curPage].offsetTop,
       behavior: "smooth",
