@@ -111,7 +111,7 @@ NavItem.forEach((items, index) => {
   }
 
   window.addEventListener("resize", () => {
-    if (window.innerWidth <= 1200) {
+    if (window.innerWidth <= 992) {
       header_panel_content.forEach((content) => {
         content.classList.remove("active");
         backdrop.classList.remove("active");
