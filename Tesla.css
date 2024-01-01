@@ -24,8 +24,13 @@ body::-webkit-scrollbar-thumb{
 body::-webkit-scrollbar-track{
   background-color:#656565;
 }
+audio::-webkit-media-controls-timeline,
 video::-webkit-media-controls-timeline {
-  display: none;
+    display: none;
+}
+audio::-webkit-media-controls,
+video::-webkit-media-controls {
+    display: none;
 }
 
 /* header */
