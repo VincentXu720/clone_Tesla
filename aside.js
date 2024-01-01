@@ -430,7 +430,6 @@ function processContent() {
 function Area() {
   const title = document.querySelector(".title");
   const back = document.querySelector(".left-arrow");
-  console.log(back)
   const asideContainer = document.querySelector(".aside-container");
   if (title && back) {
     title.innerHTML = `
@@ -488,16 +487,13 @@ function Area() {
     </section>
   `;
   readArea();
-  console.log(back)
   if (back) {
     back.addEventListener("click", () => {
-      console.log("goback1");
       goback();
     });
   } else {
     const back = document.querySelector(".left-arrow");
     back.addEventListener("click", () => {
-      console.log("goback2");
       goback();
     });
   }
@@ -650,12 +646,10 @@ function Country(AreaName) {
 }
 
 function readCountry(AreaName) {
-  console.log(AreaName)
   const bilingual = document.querySelectorAll(".bilingual");
   bilingual.forEach((multi, index) => {
     multi.addEventListener("click", () => {
       const countryname = multi.querySelector("li")
-      console.log(multi)
       if(AreaName.textContent === '北美') {
         NorthAmerica(AreaName,countryname)
       }else if(AreaName.textContent === '中東'){

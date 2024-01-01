@@ -50,21 +50,17 @@ NavItem.forEach((items, index) => {
       case 0:
         productLink[index].classList.add("active")
         carTransition(time);
-        console.log("car");
         break;
       case 1:
         productLink[index].classList.add("active")
         powerTransition(time);
-        console.log("power");
         break;
       case 2:
         productLink[index].classList.add("active")
         chargeTransition(time);
-        console.log("charge");
         break;
       case 4:
         storeTransition(time);
-        console.log("store");
         break;
     }
   });

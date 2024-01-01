@@ -34,8 +34,10 @@ if (window.innerWidth <= 699) {
   });
   singlebutton.forEach((button) => {
     button.style.opacity = 1;
-    button.style.transitionDelay = 2.8 + "s";
-    button.style.transform = "translateY(-5px)";
+    button.style.transition = 2.8 + "s";
+    button.addEventListener('mouseover',()=>{
+      button.style.transitionDelay= 0+"s";
+    })
   });
   ButtonBox.forEach((button) => {
     button.style.opacity = 1;
@@ -71,7 +73,10 @@ if (window.innerWidth <= 699) {
   singlebutton.forEach((button) => {
     button.style.opacity = 1;
     button.style.transitionDelay = 2.8 + "s";
-    button.style.transform = "translateY(-5px)";
+    button.style.transform = "translateY(-10px)";
+    button.addEventListener('mouseover',()=>{
+      button.style.transitionDelay= 0+"s";
+    })
   });
   ButtonBox.forEach((button) => {
     button.style.opacity = 1;
@@ -81,7 +86,7 @@ if (window.innerWidth <= 699) {
 }
 
 let Width = window.innerWidth;
-if (Width <= 900) {
+if (Width <= 1200 && Width >= 900) {
   let curPage = 0;
   const totalSection = section.length - 1;
   let scrolling = false;
@@ -117,8 +122,6 @@ if (Width <= 900) {
     });
   }
   function down(curPage) {
-    console.log(curPage)
-    console.log(section[curPage].offsetTop)
     window.scrollTo({
       top: section[curPage].offsetTop,
       behavior: "smooth",
