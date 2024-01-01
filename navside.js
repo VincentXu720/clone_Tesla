@@ -21,15 +21,14 @@ NavItem.forEach((items, index) => {
     content.style.opacity = 0;
   });
   header.style.opacity=1;
-  items.addEventListener("mouseover", (e) => {
-
+  items.addEventListener("mouseover", () => {
     header_panel_content.forEach((content) => {
       content.addEventListener('wheel',(e)=>{ // 防止事件冒泡
         e.stopPropagation();
       })
       content.classList.remove("active");
     });
-    body.style.overflow = 'hidden';
+    body.style.overflowY = 'hidden';
 
     header_panel.classList.add("active");
     header_panel_content[index].classList.add("active"); // 索檢使用者移到的目標內容
@@ -43,7 +42,7 @@ NavItem.forEach((items, index) => {
       header_panel.classList.remove("active");
       header_panel_content[index].classList.remove("active");
       backdrop.classList.remove("active");
-      body.style.overflow="scroll";
+      body.style.overflowY="scroll";
     });
 
     let time = 0.5;
@@ -116,7 +115,7 @@ NavItem.forEach((items, index) => {
         content.classList.remove("active");
         backdrop.classList.remove("active");
         header_panel.style.height="0px";
-        body.style.overflow="scroll";
+        body.style.overflowY="scroll";
       });
     }
   });

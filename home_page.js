@@ -81,13 +81,12 @@ if (window.innerWidth <= 699) {
 }
 
 let Width = window.innerWidth;
-if (Width <= 600) {
+if (Width <= 900) {
   let curPage = 0;
   const totalSection = section.length - 1;
   let scrolling = false;
   window.addEventListener("wheel", (e) => {
     scrolling = true;
-    body.style.overflow='scroll';
     if (scrolling === true) {
       if (e.deltaY > 0) {
         ScrollDownMove();

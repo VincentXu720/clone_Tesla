@@ -820,12 +820,4 @@ function Europe(AreaName,countryname) {
   }
 }
 
-window.addEventListener("resize", () => {
-  if (window.innerWidth <= 1200) {
-    
-  } else {
-    
-  }
-});
-
 
