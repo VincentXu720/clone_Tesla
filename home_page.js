@@ -8,6 +8,10 @@ const reserve = document.querySelectorAll(".reserve");
 const singlebutton = document.querySelectorAll(".singleButton");
 const ButtonBox = document.querySelectorAll(".buttonBox");
 const section = document.querySelectorAll(".home-content");
+
+// video
+const VideoPlay = document.querySelector('.video');
+
 if (window.innerWidth <= 699) {
   imageTitle.forEach((imgTitle) => {
     imgTitle.style.opacity = 1;
@@ -139,4 +143,13 @@ window.addEventListener('resize',()=>{
     m.style.transitionDelay = 0 + "s";
     m.style.transform = "translateX(0px)";
   });
+})
+
+body.addEventListener('click',(e)=>{
+  e.stopPropagation();
+  body.addEventListener('touchstart',()=>{
+    if(VideoPlay){
+      VideoPlay.play();
+    }
+  })
 })
