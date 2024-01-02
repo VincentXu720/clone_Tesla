@@ -24,15 +24,9 @@ body::-webkit-scrollbar-thumb{
 body::-webkit-scrollbar-track{
   background-color:#656565;
 }
-audio::-webkit-media-controls-timeline,
 video::-webkit-media-controls-timeline {
     display: none;
 }
-audio::-webkit-media-controls,
-video::-webkit-media-controls {
-    display: none;
-}
-
 /* header */
 header {
   display: grid;
@@ -988,16 +982,22 @@ aside.active {
   width:100%;
   height:100%;
   justify-content: center;
-  padding-top:55px;
+  padding-top:45px;
 }
 .TextContent{
+  display: grid;
+  grid-template-rows:min-content min-content auto;
   text-align: center;
 }
 .TextContent h1{
-  color:white;
+  color:#d11a1a;
   font-family: var(--font-fmaily);
   font-size:40px;
   height:40px;
+}
+.TextContent .subtitle{
+  color:white;
+  padding-top:8px;
 }
 .TextContent span{
   color:white;
@@ -1006,7 +1006,7 @@ aside.active {
   display:flex;
   align-items:flex-end;
   width:100%;
-  height:90%;
+  height:98%;
   opacity:0;
   transition:transform .3s ease-in , opacity .3s ease-in;
 }
@@ -1199,10 +1199,10 @@ aside.active {
     height:100vh;
   }
   .videoBox .TextBox{
-    padding-top:55px;
+    padding-top:45px;
   }
   .Linkbutton{
-    height:85%;
+    height:98%;
   }
   .Text .buttonContainer{
     height:80%
@@ -1306,7 +1306,7 @@ aside.active {
     height:100%;
   }
   .Linkbutton{
-    height:80%;
+    height:98%;
   }
   .Tesla_Product .home_image_Title{
     font-size:32px;
@@ -1370,14 +1370,11 @@ aside.active {
   .Tesla_Product .TextBox{
     padding-top:60px;
   }
-  .TextContent h1{
-    font-size:30px;
-  }
   .videoBox .TextBox{
-    padding-top:10px;
+    padding-top:30px;
   }
   .Linkbutton{
-    height:97%;
+    height:98%;
   }
   .moreProduct{
     height:83%;
@@ -1452,13 +1449,15 @@ aside.active {
     height:100%;
   }
   .TextContent{
-    height:90%;
+    height:100%;
   }
   .Tesla_Product .TextBox {
     height:100%;
     padding-top:95px;
   }
-
+  .Linkbutton{
+    height:97%;
+  }
   .moreProduct{
     height:60%;
   }
