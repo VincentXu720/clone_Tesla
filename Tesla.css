@@ -1006,7 +1006,7 @@ aside.active {
   display:flex;
   align-items:flex-end;
   width:100%;
-  height:85%;
+  height:90%;
   opacity:0;
   transition:transform .3s ease-in , opacity .3s ease-in;
 }
@@ -1370,8 +1370,14 @@ aside.active {
   .Tesla_Product .TextBox{
     padding-top:60px;
   }
+  .TextContent h1{
+    font-size:30px;
+  }
+  .videoBox .TextBox{
+    padding-top:10px;
+  }
   .Linkbutton{
-    height:85%;
+    height:97%;
   }
   .moreProduct{
     height:83%;
