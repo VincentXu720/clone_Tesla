@@ -396,7 +396,8 @@ nav.center-nav a {
 }
 .country-container{
   padding:15px 20px;
-  height:60px;
+  width:200px;
+  height:65px;
   transition:0.3s ease-in;
 }
 .country-container:hover{
@@ -577,14 +578,16 @@ aside.active {
 }
 .TextContainer span{
   margin-top:7px;
-  padding-left:20px;
 }
 .product-container a {
   text-decoration: none;
   color: black;
   margin-right: 20px;
-  border-bottom: 1px solid black;
   max-width: 100%;
+}
+.product-container a:hover{
+  color:black;
+  border-bottom:1px solid black;
 }
 .product-container img {
   object-fit: cover;
@@ -625,6 +628,7 @@ aside.active {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height:180px;
   padding: 15px 0;
   width:200px;
 }
@@ -1221,8 +1225,8 @@ aside.active {
   }
   /* aside car */
   .carImg .product-container{
-    width:200px;
-    padding-left:30px;
+    width:155px;
+    padding:0;
   }
   .carImg{
     grid-template-rows:repeat(2,1fr);
@@ -1506,12 +1510,17 @@ aside.active {
   .power-m{
     padding-left:0;;
   }
+  .power-m .product-container{
+    width:150px;
+    height:150px;
+    padding:0;
+  }
   .product-container span{
     margin-top:7px;
     width:130px;
     padding:0;
   }
   .charge-m{
-    padding-left:30px;
+    padding-left:0px;
   }
 }
