@@ -563,7 +563,6 @@ aside.active {
   display: grid;
   grid-template-columns:repeat(5,1fr);
   gap: 10px;
-  border-bottom: 1px solid black;
   max-width: 100%;
 }
 .carImg .product-container {
@@ -599,8 +598,9 @@ aside.active {
   font-family:var(--font-fmaily);
 }
 .product-Menu {
-  padding-top: 16px;
   font-size: 20px;
+  margin-top:20px;
+  border-top:1px solid black;
 }
 .product-Menu ol {
   display: grid;
@@ -622,7 +622,6 @@ aside.active {
   display: grid;
   grid-template-columns:min-content min-content;
   gap: 10px;
-  border-bottom: 1px solid black;
   max-width: 100%;
 }
 .power-m .product-container{
@@ -643,7 +642,6 @@ aside.active {
   display: grid;
   grid-template-columns:min-content min-content min-content;
   gap: 10px;
-  border-bottom: 1px solid black;
   max-width: 100%;
 }
 .charge-m .product-container{
