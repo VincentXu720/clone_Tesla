@@ -9,12 +9,13 @@ MenuBtn.addEventListener("click", () => {
     body.style.overflow='hidden';
     e.stopPropagation();
   })
-  
   openMenu();
 });
 closeBtn.addEventListener("click", () => {
   const title = document.querySelector(".title");
   const back = document.querySelector(".left-arrow");
+  const asideContainer = document.querySelector(".aside-container");
+  asideContainer.innerHTML="";
   if(title && back){
     title.remove();
     back.remove();
@@ -813,5 +814,4 @@ function Europe(AreaName,countryname) {
     });
   }
 }
-
 
